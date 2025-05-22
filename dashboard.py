@@ -1,3 +1,5 @@
+import pandas as pd 
+
 class Dashbaord: 
 
     def __init__(): 
@@ -12,4 +14,10 @@ class Dashbaord:
     def plot(): 
         ''' 
         plot the extracted data into a graph 
-        ''' 
+
+        ----------------------------------------
+        x-axis: date 
+        y-axis: price 
+        '''
+        
+        nsdq_aapl = pd.read_csv('HisotircalData_APPL.csv')
