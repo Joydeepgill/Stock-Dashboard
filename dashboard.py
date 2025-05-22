@@ -2,17 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 class Dashbaord: 
-
-    # def __init__(): p
-
     
     def parse_csv(self): 
         ''' 
         Extract and parse data from the CSV file 
         '''
+        
         nsdq_appl = pd.read_csv('HistoricalData_APPL.csv')
-        # print(nsdq_appl.head())
-
         return nsdq_appl
     
     
@@ -36,4 +32,3 @@ class Dashbaord:
 
 appl_stocks = Dashbaord()
 appl_stocks.plot()
-# print(appl_stocks.parse_csv())
