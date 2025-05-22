@@ -1,4 +1,5 @@
 import pandas as pd 
+import matplotlib.pyplot as plot
 
 class Dashbaord: 
 
@@ -19,5 +20,6 @@ class Dashbaord:
         x-axis: date 
         y-axis: price 
         '''
-        
+
         nsdq_aapl = pd.read_csv('HisotircalData_APPL.csv')
+        
