@@ -10,6 +10,7 @@ class Dashbaord:
         ''' 
         Extract and parse data from the CSV file 
         '''
+
     
     
     def plot(): 
@@ -23,3 +24,5 @@ class Dashbaord:
 
         nsdq_aapl = pd.read_csv('HisotircalData_APPL.csv')
         
+        x_axis = nsdq_aapl['Dates']
+        y_axis = nsdq_aapl['Price']
