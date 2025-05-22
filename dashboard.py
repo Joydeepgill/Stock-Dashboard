@@ -1,19 +1,22 @@
 import pandas as pd 
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 class Dashbaord: 
 
-    def __init__(): 
+    # def __init__(): p
 
     
-    def parse_csv(): 
+    def parse_csv(self): 
         ''' 
         Extract and parse data from the CSV file 
         '''
+        nsdq_appl = pd.read_csv('HistoricalData_APPL.csv')
+        # print(nsdq_appl.head())
 
+        return nsdq_appl
     
     
-    def plot(): 
+    def plot(self): 
         ''' 
         plot the extracted data into a graph 
 
@@ -22,7 +25,15 @@ class Dashbaord:
         y-axis: price 
         '''
 
-        nsdq_aapl = pd.read_csv('HisotircalData_APPL.csv')
-        
-        x_axis = nsdq_aapl['Dates']
-        y_axis = nsdq_aapl['Price']
+        appl_data = self.parse_csv() 
+        appl_data['Date'] = pd.to_datetime(appl_data['Date'])
+
+        appl_data = appl_data.sort_values(by = 'Date')
+
+        plt.plot(appl_data['Date'], appl_data['Open'])
+        plt.show()
+
+
+appl_stocks = Dashbaord()
+appl_stocks.plot()
+# print(appl_stocks.parse_csv())
